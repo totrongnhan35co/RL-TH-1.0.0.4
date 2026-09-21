@@ -1,0 +1,13 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<div style="font-family:tahoma;">
+Product: Integrated Vision System<br/>
+Version: Soft_Version<br/>
+Email:  <a href="mailto:info@rynantech.com?Subject=Support%20Integrated%20Vision%20System" target="_top">info@rynantech.com</a><br/>
+Website: <a href="http://rynantech.com" target="_blank">http://rynantech.com</a><br/>
+Address: Aperia Tower 2, 10 Kallang Avenue, Unit #05-10 Singapore, 339510<br/>
+
+<div>
+</html>

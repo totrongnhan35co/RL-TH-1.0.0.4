@@ -1,0 +1,1631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE259299-E3B7-4D58-821C-53F5D25F1D9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BarcodeVerificationSystem</RootNamespace>
+    <AssemblyName>BarcodeVerificationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <RuntimeIdentifiers>win;win-x86;win-x64</RuntimeIdentifiers>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.CogNamer.PC, Version=5.6.3.122, Culture=neutral, PublicKeyToken=9f98866f2a3a2e78, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Cognex.DataMan.CogNamer.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Discovery.PC, Version=5.6.3.122, Culture=neutral, PublicKeyToken=9f98866f2a3a2e78, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Cognex.DataMan.SDK.Discovery.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.PC, Version=5.6.3.122, Culture=neutral, PublicKeyToken=9f98866f2a3a2e78, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Cognex.DataMan.SDK.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Utils.PC, Version=5.6.3.122, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Cognex.DataMan.SDK.Utils.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="DesignUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\DesignUI.dll</HintPath>
+    </Reference>
+    <Reference Include="IPAddressControlLib, Version=1.1.3039.21560, Culture=neutral, PublicKeyToken=55e96405d8fd6d61, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\IPAddressControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MvVSControlSDK.Net">
+      <HintPath>Libs\MvVSControlSDK.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SecureDongle_Control, Version=1.0.4814.15558, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\SecureDongle_Control.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Camera\Cognex\CameraController.cs" />
+    <Compile Include="Controller\Camera\Cognex\CameraListenerServer .cs" />
+    <Compile Include="Controller\Camera\Cognex\CamerasHandler.cs" />
+    <Compile Include="Controller\Camera\Cognex\DMSeries.cs" />
+    <Compile Include="Controller\Camera\Cognex\ISCameraController.cs" />
+    <Compile Include="Controller\Camera\Cognex\ISSeries.cs" />
+    <Compile Include="Controller\Camera\Hik\HikrobotCamera.cs" />
+    <Compile Include="Controller\Camera\Keyence\CvxCamera.cs" />
+    <Compile Include="Controller\ZebraPrinter\RawPrinterHelper.cs" />
+    <Compile Include="Model\Apis\CaoSuDongNai\ApiModel.cs" />
+    <Compile Include="Model\Apis\Droco\ApiModelDorco.cs" />
+    <Compile Include="Model\Apis\Woka\ApiModelWoka.cs" />
+    <Compile Include="Model\CaoSuDongNai\CaoSuQRCode\CaoSuQRCode.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestLogin.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestPushDatabase.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestSyncOffline.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestUpdateCodeCheck.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestUpdateCodePrint.cs" />
+    <Compile Include="Model\CaoSuDongNai\Request\RequestUpdatePallet.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseAllProducts.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseBasic.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseLogin.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponsePushDatabase.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseRefreshToken.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseSyncOffline.cs" />
+    <Compile Include="Model\CaoSuDongNai\Response\ResponseUpdateCodeCheck.cs" />
+    <Compile Include="Model\CenteryIndia\CenteryIndiaModel.cs" />
+    <Compile Include="Model\Droco\BoxModel.cs" />
+    <Compile Include="Model\Droco\DrocoCartonModel.cs" />
+    <Compile Include="Model\Droco\DrocoPalletModel.cs" />
+    <Compile Include="Model\Droco\DrocoQRFieldMapping.cs" />
+    <Compile Include="Model\Droco\Request\RequestCancelList.cs" />
+    <Compile Include="Model\Droco\Request\RequestCargo.cs" />
+    <Compile Include="Model\Droco\Response\ResponseCancelList.cs" />
+    <Compile Include="Model\Droco\Response\ResponseCargo.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Request\RequestDestroyCodes.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Request\RequestGeneratedCodes.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Request\RequestPrinted.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Request\RequestPrintedAmount.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Request\RequestChecked.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseBatchInfo.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseDestroyCodes.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseGeneratedCodes.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponsePrinted.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponsePrintedAmount.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseProcessOrder.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseReservation.cs" />
+    <Compile Include="Model\Nutifood\ManufacturingPayload\Response\ResponseChecked.cs" />
+    <Compile Include="Model\PLC\PlcEventHandler.cs" />
+    <Compile Include="Model\CaoSuDongNai\PalletModel.cs" />
+    <Compile Include="Model\SharedModel\BatchDisposalModel.cs" />
+    <Compile Include="Model\SharedModel\BatchRecheckModel.cs" />
+    <Compile Include="Model\Woka\CartonModel.cs" />
+    <Compile Include="Model\Woka\Request\RequestCancelList.cs" />
+    <Compile Include="Model\Woka\Request\RequestCargo.cs" />
+    <Compile Include="Model\Woka\Response\ResponseCancelList.cs" />
+    <Compile Include="Model\Woka\Response\ResponseCargo.cs" />
+    <Compile Include="Modules\ReliableDataSender\Models\CaoSuAllValueDataEntry.cs" />
+    <Compile Include="Modules\ReliableDataSender\Models\StorageUpdate.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\CaoSuDongNai\CaoSuAllValueProcess.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\CaoSuDongNai\CaoSuPalletSender.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\CaoSuDongNai\CaoSuPrintingSender.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\CaoSuDongNai\CaoSuVerificationSender.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Droco\DrocoAllValueProcess.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Droco\DrocoCargoSender.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Droco\DrocoCargoStorage.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Droco\DrocoStorageService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Droco\DrocoPackagingManager.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Woka\WokaAllValueProcess.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Woka\WokaCargoStorage.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Woka\WokaCargoSender.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Woka\WokaStorageService.cs" />
+    <Compile Include="Modules\ReliableDataSender\SharedValues\CaoSuAllValueValues.cs" />
+    <Compile Include="Modules\ReliableDataSender\SharedValues\PrintingValues.cs" />
+    <Compile Include="Modules\ReliableDataSender\SharedValues\VerifyingValues.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="Services\CaoSuDongNai\CaoSuApiService.cs" />
+    <Compile Include="Services\CaoSuDongNai\Interface\ICaoSuApiService.cs" />
+    <Compile Include="Services\CaoSuDongNai\TokenRefresher.cs" />
+    <Compile Include="Services\Droco\DrocoApiService.cs" />
+    <Compile Include="Services\Droco\Interface\IDrocoApiService.cs" />
+    <Compile Include="Services\NutiFood\Dispatching\DispatchingService.cs" />
+    <Compile Include="Services\Interface\IApiService.cs" />
+    <Compile Include="Services\NutiFood\Interface\IDispatchingService.cs" />
+    <Compile Include="Services\NutiFood\Interface\IManufacturingService.cs" />
+    <Compile Include="Services\NutiFood\Manufacturing\ManufacturingService.cs" />
+    <Compile Include="Services\THMilk\Controller\BaseController.cs" />
+    <Compile Include="Services\THMilk\Controller\CodeController.cs" />
+    <Compile Include="Services\THMilk\Controller\LoginController.cs" />
+    <Compile Include="Services\THMilk\Controller\RefreshTokenController.cs" />
+    <Compile Include="Services\THMilk\Model\ReceiveModel\ReceiveData.cs" />
+    <Compile Include="Services\THMilk\Model\ReceiveModel\ReceiveLogin.cs" />
+    <Compile Include="Services\THMilk\Model\ReceiveModel\ReceiveRefreshToken.cs" />
+    <Compile Include="Services\THMilk\Model\ResponseModel\ResponseData.cs" />
+    <Compile Include="Services\THMilk\Model\ResponseModel\ResponseLogin.cs" />
+    <Compile Include="Services\THMilk\ServerService.cs" />
+    <Compile Include="Services\THMilk\THMilkAPIHandler.cs" />
+    <Compile Include="Services\THMilk\UsageExample.cs" />
+    <Compile Include="Services\WindowsUpdate\WindowsUpdateService.cs" />
+    <Compile Include="Services\WindowsUpdate\WindowsUpdateStatus.cs" />
+    <Compile Include="Services\Woka\Interface\IWokaApiService.cs" />
+    <Compile Include="Services\Woka\WokaApiService.cs" />
+    <Compile Include="Utils\CodeGeneration\ExcelCodeCache.cs" />
+    <Compile Include="Utils\CodeGeneration\UniqueRandomCodeGenereator.cs" />
+    <Compile Include="Utils\ControlEvents\InitControlEvents.cs" />
+    <Compile Include="Utils\ExportData\CustomExport.cs" />
+    <Compile Include="Utils\ExportData\ExportDataEventArgs.cs" />
+    <Compile Include="Utils\ExportData\ExportDataModel.cs" />
+    <Compile Include="Utils\ExportData\ExportSharedEvents.cs" />
+    <Compile Include="Utils\ExportData\models\CustomOtherHeaderName.cs" />
+    <Compile Include="Utils\ExportData\models\CustomStatusValue.cs" />
+    <Compile Include="Utils\ExportData\models\ExportColumnConfig.cs" />
+    <Compile Include="Utils\ExportData\models\HeaderModel.cs" />
+    <Compile Include="Utils\ExportData\models\Udt.cs" />
+    <Compile Include="Utils\UI\ClearValues.cs" />
+    <Compile Include="Utils\UI\ComboBoxCustom.cs" />
+    <Compile Include="Utils\UI\InputBox.cs" />
+    <Compile Include="Utils\UI\ShowDataMessage.cs" />
+    <Compile Include="Utils\Validation\CompareStatus.cs" />
+    <Compile Include="Utils\IO\CsvHandler.cs" />
+    <Compile Include="Utils\UI\DataGridViewCustom.cs" />
+    <Compile Include="Controller\Security\DecryptionHardwareID.cs" />
+    <Compile Include="Utils\UI\DrawListBox.cs" />
+    <Compile Include="Controller\Security\FingerPrint.cs" />
+    <Compile Include="Utils\UI\HistoryUtils.cs" />
+    <Compile Include="Interfaces\Camera\ISMultiSyncHandler.cs" />
+    <Compile Include="Interfaces\Camera\ISSingleHandler.cs" />
+    <Compile Include="Controller\POD\PODController.cs" />
+    <Compile Include="Controller\Security\SecurityController.cs" />
+    <Compile Include="Utils\UI\ControlShadow.cs" />
+    <Compile Include="Controller\SerialDevice\SerialDeviceController.cs">
+      <Generator>Compile</Generator>
+    </Compile>
+    <Compile Include="Controller\Shared.cs" />
+    <Compile Include="Utils\UI\TouchScroll.cs" />
+    <Compile Include="Controller\User\UserController.cs" />
+    <Compile Include="Utils\UtilityFunctions.cs" />
+    <Compile Include="Interfaces\Position\IPositionHandler.cs" />
+    <Compile Include="Labels\DevModeLabel\DevMode.cs" />
+    <Compile Include="Labels\ProjectLabel\ProjectLabel.cs" />
+    <Compile Include="Model\Apis\NutiFood\ApiModel.cs" />
+    <Compile Include="Model\Apis\NutiFood\Dispatching\DispatchingApis.cs" />
+    <Compile Include="Model\Apis\NutiFood\Manufacturing\ManufacturingApis.cs" />
+    <Compile Include="Model\Camera\CameraModel.cs" />
+    <Compile Include="Model\Nutifood\CodeGeneration\Manufacturing.cs" />
+    <Compile Include="Model\Nutifood\CodeGeneration\Dispatching.cs" />
+    <Compile Include="Model\Camera\CountEventISCamera.cs" />
+    <Compile Include="Model\Camera\DataISCamera.cs" />
+    <Compile Include="Model\SharedModel\DetectModel.cs" />
+    <Compile Include="Model\SharedModel\ExportImageModel.cs" />
+    <Compile Include="Model\ResponseModel\GetInfoDataResponseModel.cs" />
+    <Compile Include="Model\RLinkKey\HardwareIDModel.cs" />
+    <Compile Include="Model\SharedModel\InternalData.cs" />
+    <Compile Include="Model\SharedModel\ItemCustomModel.cs" />
+    <Compile Include="Model\JobModel\JobModel.cs" />
+    <Compile Include="Model\Nutifood\DeviceSettingsPayload.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\QRCode.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestBasedData.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestCheckCodeAmount.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestConfirmCompletion.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestDisposal.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestListDisposal.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestListRePrint.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestReprintedCode.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseBasedData.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseCurrentPrintedCodeInfo.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseListRePrint.cs" />
+    <Compile Include="Model\Nutifood\MonitorPayload.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestPrinted.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Request\RequestRePrint.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseConfirmCompletion.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseDisposal.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponsePrinted.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseRePrint.cs" />
+    <Compile Include="Model\Nutifood\LoginPayload.cs" />
+    <Compile Include="Model\Nutifood\DispatchingPayload\Response\ResponseOrder.cs" />
+    <Compile Include="Model\Nutifood\PermissionPayload.cs" />
+    <Compile Include="Model\PODModel\PODDataModel.cs" />
+    <Compile Include="Model\PODModel\PODModel.cs" />
+    <Compile Include="Model\PODModel\PODResponseModel.cs" />
+    <Compile Include="Model\PrinterModel\PrinterModel.cs" />
+    <Compile Include="Model\PrinterModel\PrinterSettingsModel.cs" />
+    <Compile Include="Model\PrinterModel\PrinterSettingsResponseModel.cs" />
+    <Compile Include="Model\ResponseModel\ResponseGetInfoModel.cs" />
+    <Compile Include="Model\Nutifood\RunningModel\Dispatching\PrintingMode.cs" />
+    <Compile Include="Model\SettingModel\SettingsModel.cs" />
+    <Compile Include="Model\Nutifood\SyncDataModel\SyncDataParams.cs" />
+    <Compile Include="Model\Nutifood\SyncDataModel\SynchronizedDictionary.cs" />
+    <Compile Include="Model\Nutifood\SyncDataModel\SynchronizedQueue.cs" />
+    <Compile Include="Model\SharedModel\CheckMode.cs" />
+    <Compile Include="Model\RLinkKey\USBKey.cs" />
+    <Compile Include="Model\UserInfo\UserDataModel.cs" />
+    <Compile Include="Model\UserInfo\CurrentUser.cs" />
+    <Compile Include="Model\UserInfo\OnlineUserModel.cs" />
+    <Compile Include="Model\UserInfo\UserPermission.cs" />
+    <Compile Include="Modules\ReliableDataSender\Core\PrintingQueueProcessor.cs" />
+    <Compile Include="Modules\ReliableDataSender\Core\VerificationQueueProcessor.cs" />
+    <Compile Include="Modules\ReliableDataSender\Factories\ReliableProcessorFactory.cs" />
+    <Compile Include="Modules\ReliableDataSender\Interfaces\IDataEntry.cs" />
+    <Compile Include="Modules\ReliableDataSender\Interfaces\ISenderService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Interfaces\IStorageService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Models\PrintingDataEntry.cs" />
+    <Compile Include="Modules\ReliableDataSender\Models\VerificationDataEntry.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Nutifood\PrintingStorageService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Nutifood\PrintingSenderService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Nutifood\VerificationSenderService.cs" />
+    <Compile Include="Modules\ReliableDataSender\Services\Nutifood\VerificationStorageService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\IO\ExportResult.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\API\ApiService.cs" />
+    <Compile Include="Services\NutiFood\MonitorSenderService.cs" />
+    <Compile Include="Services\NutiFood\PermissionService.cs" />
+    <Compile Include="Utils\TriggerDevices\AutoTriggerCameraDataman.cs" />
+    <Compile Include="Utils\CodeGeneration\AutoIDCodeGenerator.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\Base30Helper.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\LineConvertHelper.cs" />
+    <Compile Include="Utils\UI\CreateScrollablePanel.cs" />
+    <Compile Include="Utils\IO\FileFuncs.cs" />
+    <Compile Include="Utils\Validation\EmptyValueValidator.cs" />
+    <Compile Include="Utils\IO\FileHelper.cs" />
+    <Compile Include="Utils\Validation\MaskData.cs" />
+    <Compile Include="Utils\Logging\ExceptionLogger.cs" />
+    <Compile Include="Utils\CodeGeneration\Base30AutoCodeGenerator.cs" />
+    <Compile Include="Utils\CodeGeneration\Converter\CodeConverter.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\CurrentCodeSavedHelper.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\DateCodeHelper.cs" />
+    <Compile Include="Utils\CodeGeneration\Enum\FactoryCode.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\FactoryCodeHelper.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\MonthCodeHelper.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\RandomCharHelper.cs" />
+    <Compile Include="Utils\CodeGeneration\Helper\YearCodeHelper.cs" />
+    <Compile Include="Utils\Logging\ProjectLogger.cs" />
+    <Compile Include="Utils\System\RegistryHelper.cs" />
+    <Compile Include="Utils\System\ResetValues.cs" />
+    <Compile Include="Utils\IO\SyncDataList.cs" />
+    <Compile Include="Utils\UI\UIControlsFuncs.cs" />
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmJobCaoSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmJobCaoSu.Designer.cs">
+      <DependentUpon>frmJobCaoSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmLoginCaoSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmLoginCaoSu.Designer.cs">
+      <DependentUpon>frmLoginCaoSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSuCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSuCheck.designer.cs">
+      <DependentUpon>frmMainCaoSuCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSu.designer.cs">
+      <DependentUpon>frmMainCaoSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmSettingsCaoSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\frmSettingsCaoSu.Designer.cs">
+      <DependentUpon>frmSettingsCaoSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\ucLineSettingCaoSu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CaoSuDongNaiUI\ucLineSettingCaoSu.Designer.cs">
+      <DependentUpon>ucLineSettingCaoSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmCheckedResultCentery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmCheckedResultCentery.Designer.cs">
+      <DependentUpon>frmCheckedResultCentery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmJobCentery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmJobCentery.Designer.cs">
+      <DependentUpon>frmJobCentery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmLoginCentery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmLoginCentery.Designer.cs">
+      <DependentUpon>frmLoginCentery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmMainCentery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\frmMainCentery.designer.cs">
+      <DependentUpon>frmMainCentery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\ucLineSettingCentery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\CenteryIndiaUI\ucLineSettingCentery.Designer.cs">
+      <DependentUpon>ucLineSettingCentery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmCheckedResultDroco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmCheckedResultDroco.Designer.cs">
+      <DependentUpon>frmCheckedResultDroco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmJobDroco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmJobDroco.Designer.cs">
+      <DependentUpon>frmJobDroco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmLoginDroco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmLoginDroco.Designer.cs">
+      <DependentUpon>frmLoginDroco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmMainDroco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmMainDroco.designer.cs">
+      <DependentUpon>frmMainDroco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmReprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\DrocoUI\frmReprint.Designer.cs">
+      <DependentUpon>frmReprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmJobNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmJobNutri.Designer.cs">
+      <DependentUpon>frmJobNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\frmLoginNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\frmLoginNutri.Designer.cs">
+      <DependentUpon>frmLoginNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmMainNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmMainNutri.designer.cs">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmPreviewDatabaseNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmPreviewDatabaseNutri.Designer.cs">
+      <DependentUpon>frmPreviewDatabaseNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmSettingsNuti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Dispatching\frmSettingsNuti.Designer.cs">
+      <DependentUpon>frmSettingsNuti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmJobNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmJobNutri.Designer.cs">
+      <DependentUpon>frmJobNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmMainNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmMainNutri.designer.cs">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmSettingsNuti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmSettingsNuti.Designer.cs">
+      <DependentUpon>frmSettingsNuti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmIncompleteJobsNutri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmIncompleteJobsNutri.Designer.cs">
+      <DependentUpon>frmIncompleteJobsNutri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmCheckedTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmCheckedTH.Designer.cs">
+      <DependentUpon>frmCheckedTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmJobTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmJobTH.Designer.cs">
+      <DependentUpon>frmJobTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmLoginTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmLoginTH.Designer.cs">
+      <DependentUpon>frmLoginTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmMainTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmMainTH.designer.cs">
+      <DependentUpon>frmMainTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmSettingsTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\frmSettingsTH.Designer.cs">
+      <DependentUpon>frmSettingsTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\ucProductionSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\THMilkUI\ucProductionSetting.Designer.cs">
+      <DependentUpon>ucProductionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PopupDialogs\CustomMessageBox.cs" />
+    <Compile Include="View\PopupDialogs\frmWarningWindowsUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PopupDialogs\frmWarningWindowsUpdate.Designer.cs">
+      <DependentUpon>frmWarningWindowsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\FrmViewLogFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\FrmViewLogFile.Designer.cs">
+      <DependentUpon>FrmViewLogFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucDrocoQRFieldMapping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucDrocoQRFieldMapping.Designer.cs">
+      <DependentUpon>ucDrocoQRFieldMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucZebraPrinterSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucZebraPrinterSetting.Designer.cs">
+      <DependentUpon>ucZebraPrinterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmDisposal.Designer.cs">
+      <DependentUpon>frmDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmEditJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmEditJob.Designer.cs">
+      <DependentUpon>frmEditJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\ucProductionSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\NutrifoodUI\ucProductionSetting.Designer.cs">
+      <DependentUpon>ucProductionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmRePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\DispatchingProcess\frmRePrint.Designer.cs">
+      <DependentUpon>frmRePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmCusExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmCusExport.Designer.cs">
+      <DependentUpon>frmCusExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmDatabase.Designer.cs">
+      <DependentUpon>frmDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmTableData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmTableData.Designer.cs">
+      <DependentUpon>frmTableData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmCheckedResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmCheckedResult.Designer.cs">
+      <DependentUpon>frmCheckedResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmPrintFieldForVerifyAndPrintCompareMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmPrintFieldForVerifyAndPrintCompareMode.Designer.cs">
+      <DependentUpon>frmPrintFieldForVerifyAndPrintCompareMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmRemotePrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmRemotePrinter.Designer.cs">
+      <DependentUpon>frmRemotePrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmBased.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmBased.designer.cs">
+      <DependentUpon>frmBased.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmChangePassword.designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmJob.Designer.cs">
+      <DependentUpon>frmJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmLoginNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmLoginNew.Designer.cs">
+      <DependentUpon>frmLoginNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmManageAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmManageAccount.designer.cs">
+      <DependentUpon>frmManageAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmPODFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\frmPODFormat.designer.cs">
+      <DependentUpon>frmPODFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmPreviewDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainRLinkUI\frmPreviewDatabase.Designer.cs">
+      <DependentUpon>frmPreviewDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PopupDialogs\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PopupDialogs\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubForms\frmViewHistoryProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubForms\frmViewHistoryProgram.designer.cs">
+      <DependentUpon>frmViewHistoryProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PopupDialogs\frmWarningUSBDongleKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PopupDialogs\frmWarningUSBDongleKey.designer.cs">
+      <DependentUpon>frmWarningUSBDongleKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucCameraSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucCameraSettings.Designer.cs">
+      <DependentUpon>ucCameraSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucPrinterSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucPrinterSettings.Designer.cs">
+      <DependentUpon>ucPrinterSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSensorSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSensorSettings.Designer.cs">
+      <DependentUpon>ucSensorSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSystemSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSystemSettings.Designer.cs">
+      <DependentUpon>ucSystemSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSerialDeviceSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSettings\ucSerialDeviceSettings.Designer.cs">
+      <DependentUpon>ucSerialDeviceSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfoManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfoManual.Designer.cs">
+      <DependentUpon>frmBatchInfoManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfo.Designer.cs">
+      <DependentUpon>frmBatchInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmReCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmReCheck.Designer.cs">
+      <DependentUpon>frmReCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmDisposal.Designer.cs">
+      <DependentUpon>frmDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmEditJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmEditJob.Designer.cs">
+      <DependentUpon>frmEditJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\PLCProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UtilityForms\Nutifood\PLCProductList.Designer.cs">
+      <DependentUpon>PLCProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmCheckedResultWoka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmCheckedResultWoka.Designer.cs">
+      <DependentUpon>frmCheckedResultWoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmJobWoka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmJobWoka.Designer.cs">
+      <DependentUpon>frmJobWoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmLoginWoka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmLoginWoka.Designer.cs">
+      <DependentUpon>frmLoginWoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmMainWoka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\frmMainWoka.designer.cs">
+      <DependentUpon>frmMainWoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\ucLineSettingWoka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherProjects\WokaUI\ucLineSettingWoka.Designer.cs">
+      <DependentUpon>ucLineSettingWoka.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.vi.resx" />
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\frmJobCaoSu.resx">
+      <DependentUpon>frmJobCaoSu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\frmLoginCaoSu.resx">
+      <DependentUpon>frmLoginCaoSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSuCheck.resx">
+      <DependentUpon>frmMainCaoSuCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\frmMainCaoSu.resx">
+      <DependentUpon>frmMainCaoSu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\frmSettingsCaoSu.resx">
+      <DependentUpon>frmSettingsCaoSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CaoSuDongNaiUI\ucLineSettingCaoSu.resx">
+      <DependentUpon>ucLineSettingCaoSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmMain.vi.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\frmCheckedResultCentery.resx">
+      <DependentUpon>frmCheckedResultCentery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\frmJobCentery.resx">
+      <DependentUpon>frmJobCentery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\frmLoginCentery.resx">
+      <DependentUpon>frmLoginCentery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\frmMainCentery.resx">
+      <DependentUpon>frmMainCentery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\frmMainCentery.vi.resx">
+      <DependentUpon>frmMainCentery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\CenteryIndiaUI\ucLineSettingCentery.resx">
+      <DependentUpon>ucLineSettingCentery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmCheckedResultDroco.resx">
+      <DependentUpon>frmCheckedResultDroco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmJobDroco.resx">
+      <DependentUpon>frmJobDroco.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmLoginDroco.resx">
+      <DependentUpon>frmLoginDroco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmMainDroco.resx">
+      <DependentUpon>frmMainDroco.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmMainDroco.vi.resx">
+      <DependentUpon>frmMainDroco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\DrocoUI\frmReprint.resx">
+      <DependentUpon>frmReprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Dispatching\frmJobNutri.resx">
+      <DependentUpon>frmJobNutri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\frmLoginNutri.resx">
+      <DependentUpon>frmLoginNutri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Dispatching\frmMainNutri.resx">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Dispatching\frmMainNutri.vi.resx">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Dispatching\frmPreviewDatabaseNutri.resx">
+      <DependentUpon>frmPreviewDatabaseNutri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Dispatching\frmSettingsNuti.resx">
+      <DependentUpon>frmSettingsNuti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmIncompleteJobsNutri.resx">
+      <DependentUpon>frmIncompleteJobsNutri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmJobNutri.resx">
+      <DependentUpon>frmJobNutri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmMainNutri.resx">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmMainNutri.vi.resx">
+      <DependentUpon>frmMainNutri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\Manufacturing\frmSettingsNuti.resx">
+      <DependentUpon>frmSettingsNuti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmCheckedTH.resx">
+      <DependentUpon>frmCheckedTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmJobTH.resx">
+      <DependentUpon>frmJobTH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmLoginTH.resx">
+      <DependentUpon>frmLoginTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmMainTH.resx">
+      <DependentUpon>frmMainTH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmMainTH.vi.resx">
+      <DependentUpon>frmMainTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\frmSettingsTH.resx">
+      <DependentUpon>frmSettingsTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\THMilkUI\ucProductionSetting.resx">
+      <DependentUpon>ucProductionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucDrocoQRFieldMapping.resx">
+      <DependentUpon>ucDrocoQRFieldMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucZebraPrinterSetting.resx">
+      <DependentUpon>ucZebraPrinterSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\DispatchingProcess\frmDisposal.resx">
+      <DependentUpon>frmDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\DispatchingProcess\frmEditJob.resx">
+      <DependentUpon>frmEditJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\NutrifoodUI\ucProductionSetting.resx">
+      <DependentUpon>ucProductionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\DispatchingProcess\frmRePrint.resx">
+      <DependentUpon>frmRePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\frmCusExport.resx">
+      <DependentUpon>frmCusExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\frmDatabase.resx">
+      <DependentUpon>frmDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\frmTableData.resx">
+      <DependentUpon>frmTableData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmBased.resx">
+      <DependentUpon>frmBased.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmCheckedResult.resx">
+      <DependentUpon>frmCheckedResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmJob.resx">
+      <DependentUpon>frmJob.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmLogin.resx" />
+    <EmbeddedResource Include="View\MainRLinkUI\frmLogin.vi.resx" />
+    <EmbeddedResource Include="View\MainRLinkUI\frmLoginNew.resx">
+      <DependentUpon>frmLoginNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmManageAccount.resx">
+      <DependentUpon>frmManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\frmPODFormat.resx">
+      <DependentUpon>frmPODFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainRLinkUI\frmPreviewDatabase.resx">
+      <DependentUpon>frmPreviewDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\frmPrintFieldForVerifyAndPrintCompareMode.resx">
+      <DependentUpon>frmPrintFieldForVerifyAndPrintCompareMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmRemotePrinter.resx">
+      <DependentUpon>frmRemotePrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PopupDialogs\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SubForms\frmViewHistoryProgram.resx">
+      <DependentUpon>frmViewHistoryProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PopupDialogs\frmWarningUSBDongleKey.resx">
+      <DependentUpon>frmWarningUSBDongleKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucCameraSettings.resx">
+      <DependentUpon>ucCameraSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucPrinterSettings.resx">
+      <DependentUpon>ucPrinterSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucSensorSettings.resx">
+      <DependentUpon>ucSensorSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucSystemSettings.resx">
+      <DependentUpon>ucSystemSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSettings\ucSerialDeviceSettings.resx">
+      <DependentUpon>ucSerialDeviceSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfoManual.resx">
+      <DependentUpon>frmBatchInfoManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmBatchInfo.resx">
+      <DependentUpon>frmBatchInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmReCheck.resx">
+      <DependentUpon>frmReCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmDisposal.resx">
+      <DependentUpon>frmDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\ManufacturingProcess\frmEditJob.resx">
+      <DependentUpon>frmEditJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UtilityForms\Nutifood\PLCProductList.resx">
+      <DependentUpon>PLCProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\frmCheckedResultWoka.resx">
+      <DependentUpon>frmCheckedResultWoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\frmJobWoka.resx">
+      <DependentUpon>frmJobWoka.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\frmLoginWoka.resx">
+      <DependentUpon>frmLoginWoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\frmMainWoka.resx">
+      <DependentUpon>frmMainWoka.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\frmMainWoka.vi.resx">
+      <DependentUpon>frmMainWoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherProjects\WokaUI\ucLineSettingWoka.resx">
+      <DependentUpon>ucLineSettingWoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Assets\RLinkUserManual.docx" />
+    <None Include="bin\Debug\BarcodeVerificationSystem.exe.config" />
+    <None Include="obj\BarcodeVerificationSystem.csproj.nuget.dgspec.json" />
+    <None Include="obj\BarcodeVerificationSystem.csproj.nuget.g.props" />
+    <None Include="obj\BarcodeVerificationSystem.csproj.nuget.g.targets" />
+    <None Include="obj\project.assets.json" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SoftwareInstaller\1.0.2.0_Nuti\R_Link_Setup64_1.0.2.0 _260129.zip" />
+    <None Include="SoftwareInstaller\1.0.2.1\R_Link_Setup64_1.0.2.1_260204.zip" />
+    <None Include="SoftwareInstaller\R_Link_Setup64_1.0.2.1_260212.zip" />
+    <None Include="SoftwareInstaller\TH\R_Link_Setup64_1.0.0.0_260209.zip" />
+    <None Include="SoftwareInstaller\Woka\R_Link_Setup64_1.0.0.0_251222.zip" />
+    <None Include="Utils\CodeGeneration\Docs\thuat_toan_sinh_code.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BarcodeVerificationSystem.exe" />
+    <Content Include="bin\Debug\BarcodeVerificationSystem.pdb" />
+    <Content Include="bin\Debug\vi\BarcodeVerificationSystem.resources.dll" />
+    <Content Include="Controller\Camera\ScriptMultiReadDataman.txt" />
+    <Content Include="icon.ico" />
+    <Content Include="Labels\Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Labels\RynanSingapore\about.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Labels\RynanSingapore\icon.ico" />
+    <Content Include="Labels\RynanSingapore\logo.png" />
+    <Content Include="Labels\Rynan\about.txt" />
+    <Content Include="Labels\Rynan\icon.ico" />
+    <Content Include="Labels\Rynan\logo.png" />
+    <Content Include="Libs\CircularProgressBar.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.Cnx.CioMicro.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.DataMan.CogNamer.PC.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.DataMan.SDK.Discovery.PC.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.DataMan.SDK.PC.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.DataMan.SDK.Utils.PC.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.InSight.Controls.Display.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.InSight.Controls.Display.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.InSight.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Cognex.InSight.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\DesignUI.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\FontAwesome.Sharp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\IPAddressControlLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Microsoft.Web.WebView2.Core.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Microsoft.Web.WebView2.WinForms.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Microsoft.Web.WebView2.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\SecureDongle_Control.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\System.Data.SQLite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\System.Data.SQLite.EF6.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\System.Data.SQLite.Linq.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\WinFormAnimation.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logores.ico" />
+    <Content Include="R-Link_InnoScript.iss" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\Cognex_Small.jpg" />
+    <None Include="Resources\database -disconnect.png" />
+    <None Include="Resources\database -disconnect1.png" />
+    <None Include="Resources\database -connected.png" />
+    <Content Include="Resources\Database18.png" />
+    <Content Include="Resources\AccountsDumpCommand.sql" />
+    <None Include="Resources\icons8_scanner_disconnected.png" />
+    <None Include="Resources\icons8_scanner_connected.png" />
+    <None Include="Resources\icon-check-mark.png" />
+    <Resource Include="Resources\nutifood_logo.jpg" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\failed.png" />
+    <None Include="Resources\icons-green-dot.png" />
+    <None Include="Resources\icons8-red-dot.png" />
+    <None Include="Resources\triangle.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\icons8-arrow-left.png" />
+    <None Include="Resources\icons8-arrow-right.png" />
+    <None Include="Resources\icons8-arrow-left-1.png" />
+    <None Include="Resources\icons8-arrow-right1.png" />
+    <None Include="Resources\Sensor_Small.png" />
+    <None Include="Resources\Sensor_Small_1.png" />
+    <None Include="Resources\zebra_connected.png.png" />
+    <None Include="Resources\zebra_disconnected.png" />
+    <None Include="Resources\db-disconnected.png" />
+    <None Include="Resources\db-connected.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\info1.png" />
+    <None Include="Resources\info %281%29.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\information-button %281%29.png" />
+    <Content Include="SoftwareInstaller\1.0.2.0_Nuti\R_Link_Setup64_1.0.2.0 _260129.exe" />
+    <Content Include="SoftwareInstaller\1.0.2.1\R_Link_Setup64_1.0.2.1_260204.exe" />
+    <Content Include="SoftwareInstaller\nuti-good-now\CU\R_Link_Setup64_1.0.1.2_260108.exe" />
+    <Content Include="SoftwareInstaller\nuti-good-now\R_Link_Setup64_1.0.1.2_260108.exe" />
+    <Content Include="SoftwareInstaller\R_Link_Setup64_1.0.2.1_260212.exe" />
+    <Content Include="SoftwareInstaller\TH\R_Link_Setup64_1.0.0.0_260209.exe" />
+    <Content Include="SoftwareInstaller\Woka\R_Link_Setup64_1.0.0.0_251222.exe" />
+    <Content Include="vcredist2010_x86.exe" />
+    <None Include="RConfig.dat" />
+    <None Include="Resources\TemplateIllustration.png" />
+    <None Include="Resources\Warning128.png" />
+    <None Include="Resources\icons8-proximity-sensor-24.png" />
+    <None Include="Resources\icons8-import-csv-100.png" />
+    <None Include="Resources\icons8_import_csv_35px.png" />
+    <None Include="Resources\icons8_import_csv_16px.png" />
+    <None Include="Resources\icons8_import_csv_20px.png" />
+    <None Include="Resources\icons8_database_import_20px.png" />
+    <None Include="Resources\icons8_next_page_24px.png" />
+    <None Include="Resources\icons8_back_to_24px.png" />
+    <None Include="Resources\icons8_slide_up_24px.png" />
+    <None Include="Resources\icons8_down_button_24px.png" />
+    <None Include="Resources\icons8_clipboard_24px.png" />
+    <None Include="Resources\icons8_save_24px.png" />
+    <None Include="Resources\icons8_cancel_24px.png" />
+    <None Include="Resources\icons8_delete_row_25px.png" />
+    <None Include="Resources\icons8_txt_25px.png" />
+    <None Include="Resources\icons8_database_25px.png" />
+    <None Include="Resources\icons8_create_20px.png" />
+    <None Include="Resources\icons8_done_20px.png" />
+    <None Include="Resources\icons8_multiply_20px.png" />
+    <None Include="Resources\icons8_enter_16px.png" />
+    <None Include="Resources\icons8_info_16px.png" />
+    <None Include="Resources\icons8_logout_16px_1.png" />
+    <None Include="Resources\icons8_play_16px.png" />
+    <None Include="Resources\icons8_Stop_Circled_16px.png" />
+    <None Include="Resources\icons8_warning_16px.png" />
+    <None Include="Resources\icons8_xbox_x_16px.png" />
+    <None Include="Resources\icons8_print_16px.png" />
+    <None Include="Resources\icons8_print_16px_1.png" />
+    <None Include="Resources\icons8_camera_30px_disconencted.png" />
+    <None Include="Resources\icons8_camera_30px_conencted.png" />
+    <None Include="Resources\icons8_print_30px_connected.png" />
+    <None Include="Resources\icons8_print_30px_disconected.png" />
+    <None Include="Resources\icons8_sensor_30px_connected.png" />
+    <None Include="Resources\icons8_sensor_30px_disconected.png" />
+    <None Include="Resources\icons8_iPhone_Spinner_20px.png" />
+    <None Include="Resources\icons8_info_24px.png" />
+    <None Include="Resources\icons8_close_window_24px.png" />
+    <None Include="Resources\icons8_warning_24px.png" />
+    <None Include="Resources\icons8_info_24px1.png" />
+    <None Include="Resources\icons8_logout_24px.png" />
+    <None Include="Resources\icons8_play_24px.png" />
+    <None Include="Resources\icons8_Stop_Circled_24px.png" />
+    <None Include="Resources\icons8_in_progress_20px_1.png" />
+    <None Include="Resources\icons8_in_progress_20px_3.png" />
+    <None Include="Resources\icons8_done_20px_1.png" />
+    <None Include="Resources\icons8_in_progress_20px_4.png" />
+    <None Include="Resources\icons8_done_24px_5.png" />
+    <None Include="Resources\icons8_in_progress_24px_2.png" />
+    <None Include="Resources\icons8_camera_30px_connected.png" />
+    <None Include="Resources\icons8_camera_30px_disconnected.png" />
+    <None Include="Resources\icons8_done_24px_result.png" />
+    <None Include="Resources\icons8_in_progress_24px_3.png" />
+    <None Include="Resources\icons8_printer_30px_connected.png" />
+    <None Include="Resources\icons8_printer_30px_disconnected.png" />
+    <None Include="Resources\icons8_sensor_30px_connected1.png" />
+    <None Include="Resources\icons8_sensor_30px_disconnected.png" />
+    <None Include="Resources\icons8_X_result.png" />
+    <None Include="Resources\icons8_clipboard_24px1.png" />
+    <None Include="Resources\icons8_Add_Database_24px.png" />
+    <None Include="Resources\icons8_Add_Database_24px_1.png" />
+    <None Include="Resources\icons8_checklist_24px.png" />
+    <None Include="Resources\icons8_checklist_24px_1.png" />
+    <None Include="Resources\icons8_checklist_24px_2.png" />
+    <None Include="Resources\icons8_sort_right_24px_1.png" />
+    <None Include="Resources\icons8_sort_left_24px_1.png" />
+    <None Include="Resources\icons8_sort_right_24px1.png" />
+    <None Include="Resources\icons8_sort_left_24px2.png" />
+    <None Include="Resources\icons8_Sort_Up_24px1.png" />
+    <None Include="Resources\icons8_Sort_Down_24px1.png" />
+    <None Include="Resources\icons8_delete_graph_report_24px.png" />
+    <None Include="Resources\icons8_Sort_Up_24px_1.png" />
+    <None Include="Resources\icons8_Sort_Down_24px_1.png" />
+    <None Include="Resources\icons8_delete_file_24px.png" />
+    <None Include="Resources\icons8_barcode_approve_100px.png" />
+    <Content Include="Resources\icon_add_18.png" />
+    <None Include="Resources\Stop321.png" />
+    <None Include="Resources\Play321.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\icon_warning_161.png" />
+    <None Include="Resources\icon_trigger_321.png" />
+    <None Include="Resources\icon_total_241.png" />
+    <None Include="Resources\icon_total_181.png" />
+    <None Include="Resources\icon_template_321.png" />
+    <None Include="Resources\icon_stop_161.png" />
+    <None Include="Resources\icon_status_181.png" />
+    <None Include="Resources\icon_start_161.png" />
+    <None Include="Resources\icon_settings_321.png" />
+    <None Include="Resources\icon_server_disconnected_241.png" />
+    <None Include="Resources\icon_server_connected_241.png" />
+    <None Include="Resources\icon_search_181.png" />
+    <None Include="Resources\icon_save_321.png" />
+    <None Include="Resources\icon_save_181.png" />
+    <None Include="Resources\icon_refresh_161.png" />
+    <None Include="Resources\icon_publish_change_321.png" />
+    <None Include="Resources\icon_pallet_241.png" />
+    <None Include="Resources\icon_open_321.png" />
+    <None Include="Resources\icon_ocr_321.png" />
+    <None Include="Resources\icon_logout_161.png" />
+    <None Include="Resources\icon_login_161.png" />
+    <None Include="Resources\icon_loading_2681.gif" />
+    <None Include="Resources\icon_info_gray_161.png" />
+    <None Include="Resources\icon_info_241.png" />
+    <None Include="Resources\icon_info_161.png" />
+    <None Include="Resources\icon_get_app_181.png" />
+    <None Include="Resources\icon_failed_181.png" />
+    <None Include="Resources\icon_edit_181.png" />
+    <None Include="Resources\icon_delete_181.png" />
+    <None Include="Resources\icon_database_32_02_021.png" />
+    <None Include="Resources\icon_database_32_01_021.png" />
+    <None Include="Resources\icon_database_321.png" />
+    <None Include="Resources\icon_database_18_02_021.png" />
+    <None Include="Resources\icon_database_18_01_021.png" />
+    <None Include="Resources\icon_database_181.png" />
+    <None Include="Resources\icon_close_241.png" />
+    <None Include="Resources\icon_close_181.png" />
+    <None Include="Resources\icon_close_161.png" />
+    <None Include="Resources\icon_check_241.png" />
+    <None Include="Resources\icon_check_161.png" />
+    <None Include="Resources\icon_camera_321.png" />
+    <None Include="Resources\icon_box_241.png" />
+    <None Include="Resources\icon_bottle_241.png" />
+    <None Include="Resources\icon_barcode_321.png" />
+    <None Include="Resources\icon_add_181.png" />
+    <Content Include="Resources\icon_barcode_32.png" />
+    <Content Include="Resources\icon_bottle_24.png" />
+    <Content Include="Resources\icon_box_24.png" />
+    <Content Include="Resources\icon_camera_32.png" />
+    <Content Include="Resources\icon_camera_connected.png" />
+    <Content Include="Resources\icon_camera_connected1.png" />
+    <Content Include="Resources\icon_camera_disconneted.png" />
+    <Content Include="Resources\icon_camera_disconneted1.png" />
+    <Content Include="Resources\icon_check_16.png" />
+    <Content Include="Resources\icon_check_24.png" />
+    <Content Include="Resources\icon_close_16.png" />
+    <Content Include="Resources\icon_close_18.png" />
+    <Content Include="Resources\icon_close_24.png" />
+    <Content Include="Resources\icon_conveyor_connected_24.png" />
+    <Content Include="Resources\icon_conveyor_connected_241.png" />
+    <Content Include="Resources\icon_conveyor_disconnected_24.png" />
+    <Content Include="Resources\icon_conveyor_disconnected_241.png" />
+    <Content Include="Resources\icon_database_128.ico" />
+    <Content Include="Resources\icon_database_18.png" />
+    <Content Include="Resources\icon_database_18_01.png" />
+    <Content Include="Resources\icon_database_18_01_02.png" />
+    <Content Include="Resources\icon_database_18_02.png" />
+    <Content Include="Resources\icon_database_18_02_02.png" />
+    <Content Include="Resources\icon_database_32.png" />
+    <Content Include="Resources\icon_database_32_01.png" />
+    <Content Include="Resources\icon_database_32_01_02.png" />
+    <Content Include="Resources\icon_database_32_02.png" />
+    <Content Include="Resources\icon_database_32_02_02.png" />
+    <Content Include="Resources\icon_delete_18.png" />
+    <Content Include="Resources\icon_edit_18.png" />
+    <Content Include="Resources\icon_failed_18.png" />
+    <Content Include="Resources\icon_get_app_18.png" />
+    <Content Include="Resources\icon_history.ico" />
+    <Content Include="Resources\icon_info_16.png" />
+    <Content Include="Resources\icon_info_24.png" />
+    <None Include="Resources\icon_info_242.png" />
+    <Content Include="Resources\icon_info_gray_16.png" />
+    <Content Include="Resources\icon_loading_268.gif" />
+    <Content Include="Resources\icon_login_16.png" />
+    <Content Include="Resources\icon_logout_16.png" />
+    <Content Include="Resources\icon_ocr_32.png" />
+    <Content Include="Resources\icon_open_32.png" />
+    <Content Include="Resources\icon_pallet_24.png" />
+    <Content Include="Resources\icon_printer_connected_24.png" />
+    <Content Include="Resources\icon_printer_connected_241.png" />
+    <Content Include="Resources\icon_printer_disconnected_24.png" />
+    <Content Include="Resources\icon_printer_disconnected_241.png" />
+    <Content Include="Resources\icon_publish_change_32.png" />
+    <Content Include="Resources\icon_refresh_16.png" />
+    <Content Include="Resources\icon_save_18.png" />
+    <Content Include="Resources\icon_save_32.png" />
+    <Content Include="Resources\icon_search_18.png" />
+    <Content Include="Resources\icon_server_connected_24.png" />
+    <Content Include="Resources\icon_server_disconnected_24.png" />
+    <Content Include="Resources\icon_settings_128.ico" />
+    <Content Include="Resources\icon_settings_32.png" />
+    <Content Include="Resources\icon_start_16.png" />
+    <Content Include="Resources\icon_status_18.png" />
+    <Content Include="Resources\icon_stop_16.png" />
+    <Content Include="Resources\icon_template_128.ico" />
+    <Content Include="Resources\icon_template_32.png" />
+    <Content Include="Resources\icon_total_18.png" />
+    <Content Include="Resources\icon_total_24.png" />
+    <Content Include="Resources\icon_trigger_32.png" />
+    <Content Include="Resources\icon_warning_16.png" />
+    <None Include="Resources\LabelSet.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\Open32.png" />
+    <Content Include="Resources\Play32.png" />
+    <Content Include="Resources\Settings32.png" />
+    <Content Include="Resources\Stop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Libs\x64\" />
+    <Folder Include="Model\Nutifood\RunningModel\Manufacturing\" />
+    <Folder Include="obj\Release\" />
+    <Folder Include="SoftwareInstaller\India_good\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonVariable\CommonVariable.csproj">
+      <Project>{35d4d2a3-2cbe-4e55-9c71-901ba4037a0d}</Project>
+      <Name>CommonVariable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OperationLog\OperationLog.csproj">
+      <Project>{5774be71-5280-4f15-951a-a63377dac379}</Project>
+      <Name>OperationLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestartProcessHelper\RestartProcessHelper\RestartProcessHelper.csproj">
+      <Project>{bd4a8cbb-5bce-4cae-8d66-05d4ae763074}</Project>
+      <Name>RestartProcessHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDK\Cognex.InSight.Web.Controls\Cognex.InSight.Web.Controls.csproj">
+      <Project>{FE709697-9058-40E9-BE11-C685E2B50E05}</Project>
+      <Name>Cognex.InSight.Web.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDK\Cognex.InSight.Web\Cognex.InSight.Web.csproj">
+      <Project>{4B139CAB-9B75-4260-B137-B793FE1143D5}</Project>
+      <Name>Cognex.InSight.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UILanguage\UILanguage.csproj">
+      <Project>{a01b423f-b159-422c-8961-474feae9bd78}</Project>
+      <Name>UILanguage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DeepCloner">
+      <Version>0.10.4</Version>
+    </PackageReference>
+    <PackageReference Include="EPPlus">
+      <Version>4.5.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="FontAwesome.Sharp">
+      <Version>6.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory">
+      <Version>8.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>8.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>8.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.3537.50</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>9.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="NPOI">
+      <Version>2.7.5</Version>
+    </PackageReference>
+    <PackageReference Include="PDFsharp">
+      <Version>6.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Sinks.File">
+      <Version>7.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt">
+      <Version>8.15.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens">
+      <Version>8.15.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens">
+      <Version>8.15.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Management">
+      <Version>8.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Channels">
+      <Version>8.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Tasks.Dataflow">
+      <Version>4.11.1</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDataReader">
+      <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDataReader.DataSet">
+      <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Encoding.CodePages">
+      <Version>8.0.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Text.Encodings.Web">
+      <Version>8.0.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>8.0.5</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.5.5</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.1</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.0.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.5.0</Version>
+      <IncludeAssets>all</IncludeAssets>
+      <PrivateAssets>none</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net">
+      <Version>0.16.11</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

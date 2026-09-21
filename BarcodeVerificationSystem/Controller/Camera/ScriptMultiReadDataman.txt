@@ -1,0 +1,20 @@
+// Default script for data formatting
+function onResult (decodeResults, readerProperties, output)
+{
+	output.content = "";
+	var temp = ["","","",""];
+	var slave = ["DM280-28D494","DM280-8DF40E","DM280-A3B5F0"]; 
+	var i=0;
+	for (var x=0; x<decodeResults.length; x++) 
+	{
+		if (decodeResults[x].decoded)
+		{
+			i = slave.indexOf(decodeResults[x].source); 
+			temp[i+1] = decodeResults[x].content;
+		}
+
+	}
+	
+	output.content = temp[0] + temp[1] + temp[2]  + temp[3] + "#\r\n";
+
+}

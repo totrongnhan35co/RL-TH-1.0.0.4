@@ -1,0 +1,1 @@
+CREATE TABLE tbl_Accounts (id	INTEGER PRIMARY KEY AUTOINCREMENT,logtype	INTEGER,keyword	TEXT,command	TEXT,message	TEXT,date	TEXT,user	TEXT);

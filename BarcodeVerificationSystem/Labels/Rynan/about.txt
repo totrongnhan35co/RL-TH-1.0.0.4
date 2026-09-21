@@ -1,0 +1,13 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<div style="font-family:tahoma;">
+Product: R Link<br/>
+Version: Soft_Version<br/>
+Email:  <a href="mailto:info@rynantech.com?Subject=Support%Code%Tracker" target="_top">info@rynantech.com</a><br/>
+Website: <a href="https://rynan.vn" target="_blank">https://rynan.vn</a><br/>
+Address: LongTri Hamlet, LongDuc Ward, TraVinh City, TraVinh Province, Vietnam<br/>
+
+<div>
+</html>

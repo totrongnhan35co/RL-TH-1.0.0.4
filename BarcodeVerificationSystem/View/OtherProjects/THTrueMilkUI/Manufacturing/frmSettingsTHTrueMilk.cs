@@ -1,0 +1,482 @@
+﻿using BarcodeVerificationSystem.Controller;
+using BarcodeVerificationSystem.Labels.ProjectLabel;
+using BarcodeVerificationSystem.Model;
+using BarcodeVerificationSystem.Model.UserPermission;
+using BarcodeVerificationSystem.Utils;
+using BarcodeVerificationSystem.Model.THTrueMilk;
+using BarcodeVerificationSystem.View.OtherProjects.THTrueMilkUI;
+using BarcodeVerificationSystem.View.THTrueMilkUI.Manufacturing;
+using BarcodeVerificationSystem.View.UcSettings;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using UILanguage;
+
+namespace BarcodeVerificationSystem.View.THTrueMilkUI.Manufacturing
+{
+    public partial class FrmSettingsTHTrueMilk : Form
+    {
+        #region Properties
+        private readonly List<ToolStripLabel> _LabelStatusCameraList = new List<ToolStripLabel>();
+        private ucConfigInfo _ucConfigInfo;
+        private readonly List<ToolStripLabel> _LabelStatusPrinterList = new List<ToolStripLabel>();
+        private readonly Timer _DateTimeTicker = new Timer();
+        private readonly string _DateTimeFormat = "yyyy/MM/dd hh:mm:ss tt";
+        private const int CS_DropShadow = 0x00020000;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ClassStyle = CS_DropShadow;
+                return createParams;
+            }
+        }
+
+        #endregion Properties
+
+        public FrmSettingsTHTrueMilk()
+        {
+            InitializeComponent();
+            InitControls();
+            SetLanguage();
+            SetTabPagesContentEnabled(tabControlSettings, Shared.OperStatus == OperationStatus.Stopped); //  
+
+        }
+        private void SetTabPagesContentEnabled(TabControl tabControl, bool enable)
+        {
+            foreach (TabPage tabPage in tabControl.TabPages)
+            {
+                foreach (Control ctrl in tabPage.Controls)
+                {
+                    ctrl.Enabled = enable;
+                }
+            }
+        }
+        private void UpdateStatusLabelDatabase()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateStatusLabelDatabase()));
+                return;
+            }
+
+            if (Shared.IsDatabaseConnected)
+            {
+                ShowLabelIcon(lblStatusDatabase, "Database", Properties.Resources.database__connected);
+            }
+            else
+            {
+                ShowLabelIcon(lblStatusDatabase, "Database", Properties.Resources.database__disconnect);
+            }
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            InitEvents();
+        }
+        private void InitControls()
+        {
+            _DateTimeTicker.Start();
+            // Show icon camera status
+            _LabelStatusCameraList.Add(lblStatusCamera01);
+            UpdateStatusLabelCamera();
+
+            // Show icon printer status
+            _LabelStatusPrinterList.Add(lblStatusPrinter01);
+            UpdateStatusLabelPrinter();
+
+            // Show icon sensor controller status
+            UpdateUISensorControllerStatus(Shared.IsSensorControllerConnected);
+
+            // Show icon serial device status
+            UpdateUISerialDeviceControllerStatus(Shared.IsSerialDeviceConnected);
+            UpdateStatusLabelDatabase(); 
+           //Initial tab settings
+           tabPageSystemSettings.Controls.Clear();
+            UcSystemSettings ucSystemSettings = new UcSystemSettings();
+            ucSystemSettings.Dock = DockStyle.Fill;
+            tabPageSystemSettings.Controls.Add(ucSystemSettings);
+            //END Initial tab settings
+
+            // Initial tab camera settings
+            tabPageCameraSettings.Controls.Clear();
+            for (int i = 0; i < Shared.Settings.CameraList.Count; i++)
+            {
+                UcCameraSettings ucCameraSettings = new UcCameraSettings
+                {
+                    Index = Shared.Settings.CameraList[i].Index,
+                    Dock = DockStyle.Top
+                };
+                tabPageCameraSettings.Controls.Add(ucCameraSettings);
+                ucCameraSettings.BringToFront();
+            }
+            // END Intial tab camera settings
+
+            // Initial tab camera settings
+            tabPagePrinterSettings.Controls.Clear();
+            for (int i = 0; i < Shared.Settings.PrinterList.Count; i++)
+            {
+                UcPrinterSettings ucPrinterSettings = new UcPrinterSettings
+                {
+                    Index = Shared.Settings.PrinterList[i].Index,
+                    Dock = DockStyle.Top
+                };
+                tabPagePrinterSettings.Controls.Add(ucPrinterSettings);
+                ucPrinterSettings.BringToFront();
+            }
+            // END Intial tab camera settings
+
+            //Initial tab camera settings
+            tabPageSensorController.Controls.Clear();
+            UcSensorSettings ucSensorSettings = new UcSensorSettings();
+            ucSensorSettings.Dock = DockStyle.Fill;
+            tabPageSensorController.Controls.Add(ucSensorSettings);
+            //END Initial tab camera settings
+
+            //Initial tab Serial Device settings
+            tabPageSerialDevice.Controls.Clear();
+            ucSerialDeviceSettings usSerialDeviceSettings = new ucSerialDeviceSettings();
+            usSerialDeviceSettings.Dock = DockStyle.Fill;
+            tabPageSerialDevice.Controls.Add(usSerialDeviceSettings);
+            //END Initial tab Serial Device settings
+
+            string currentUser;
+            try
+            {
+                currentUser = SecurityController.Decrypt(Shared.LoggedInUser.UserName, "rynan_encrypt_remember");
+                // Nếu decrypt ra rỗng hoặc lỗi ký tự → dùng plain text
+                if (string.IsNullOrWhiteSpace(currentUser))
+                    currentUser = Shared.LoggedInUser.UserName;
+            }
+            catch
+            {
+                // R-Link login: UserName là plain text, không cần decrypt
+                currentUser = Shared.LoggedInUser.UserName ?? "";
+            }
+
+
+            var perm = Shared.UserPermission;
+
+            if ((ProjectLabel.IsTHTrueMilk && (perm.ProductionSettings || perm.ViewSetting)) || currentUser == "Support")
+            {
+                this.tabPageProductionSetting = new System.Windows.Forms.TabPage();
+                this.tabControlSettings.Controls.Add(this.tabPageProductionSetting);
+
+                this.tabPageProductionSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.tabPageProductionSetting.Location = new System.Drawing.Point(4, 44);
+                this.tabPageProductionSetting.Name = "tabPageAPISetting";
+                this.tabPageProductionSetting.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+                this.tabPageProductionSetting.Size = new System.Drawing.Size(996, 484);
+                this.tabPageProductionSetting.TabIndex = 1;
+                this.tabPageProductionSetting.Text = "Cài đặt PostgreSQL";
+                this.tabPageProductionSetting.UseVisualStyleBackColor = true;
+
+                this.tabPageConfigInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.tabPageConfigInfo.Location = new System.Drawing.Point(4, 44);
+                this.tabPageConfigInfo.Name = "tabPageConfigInfo";
+                this.tabPageConfigInfo.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+                this.tabPageConfigInfo.Size = new System.Drawing.Size(996, 484);
+                this.tabPageConfigInfo.TabIndex = 1;
+                this.tabPageConfigInfo.Text = "Thông tin cấu hình";
+                this.tabPageConfigInfo.UseVisualStyleBackColor = true;
+
+                tabPageProductionSetting.Controls.Clear();
+                ucProductionTHTrueMilkSetting ucApiSetting = new ucProductionTHTrueMilkSetting();
+                ucApiSetting.Dock = DockStyle.Fill;
+                tabPageProductionSetting.Controls.Add(ucApiSetting);
+
+                tabPageConfigInfo.Controls.Clear();
+                _ucConfigInfo = new ucConfigInfo();
+                _ucConfigInfo.Dock = DockStyle.Fill;
+                tabPageConfigInfo.Controls.Add(_ucConfigInfo);
+                LoadConfigInfo();
+
+                // Chỉ có quyền xem (không có quyền sửa) → đặt read-only
+                bool canEdit = perm.Settings || perm.ProductionSettings;
+                if (!canEdit && perm.ViewSetting && currentUser != "Support")
+                {
+                    SetSettingsReadOnly();
+                }
+            }
+            this.tabControlSettings.Controls.Remove(this.tabPageSystemSettings);
+        }
+
+        private void SetSettingsReadOnly()
+        {
+            foreach (Control c in tabControlSettings.Controls)
+                DisableControlsRecursive(c);
+        }
+
+        private void DisableControlsRecursive(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is TextBox txt) txt.ReadOnly = true;
+                else if (c is ComboBox cb) cb.Enabled = false;
+                else if (c is CheckBox chk) chk.Enabled = false;
+                else if (c is NumericUpDown nud) nud.Enabled = false;
+                else if (c is TrackBar trk) trk.Enabled = false;
+                else if (c is Button btn) btn.Enabled = false;
+                else if (c.HasChildren) DisableControlsRecursive(c);
+            }
+        }
+
+        private void InitEvents()
+        {
+            Shared.OnLanguageChange += Shared_OnLanguageChange;
+            Shared.OnCameraStatusChange += Shared_OnCameraStatusChange;
+            Shared.OnPrinterStatusChange += Shared_OnPrinterStatusChange;
+            Shared.OnSensorControllerChangeEvent += Shared_OnSensorControllerChangeEvent;
+            Shared.OnSerialDeviceControllerChangeEvent += Shared_OnSerialDeviceControllerChangeEvent;
+            Shared.OnDatabaseStatusChange += Shared_OnDatabaseStatusChange; //
+            _DateTimeTicker.Tick += TimerDateTime_Tick;
+        }
+
+        private void Shared_OnDatabaseStatusChange(object sender, EventArgs e)
+        {
+            UpdateStatusLabelDatabase();
+        }
+
+        /// <summary>
+        /// Update current time delay check
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerDateTime_Tick(object sender, EventArgs e)
+        {
+            toolStripDateTime.Text = DateTime.Now.ToString(_DateTimeFormat);
+        }
+
+        /// <summary>
+        /// Invoke language change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Shared_OnLanguageChange(object sender, EventArgs e)
+        {
+            SetLanguage();
+        }
+
+        /// <summary>
+        /// Set user interface language
+        /// </summary>
+        private void SetLanguage()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() => SetLanguage()));
+                return;
+            }
+            tabPageCameraSettings.Text = Lang.CameraSettings;
+            tabPageSystemSettings.Text = Lang.SystemSettings;
+            tabPagePrinterSettings.Text = Lang.PrinterSettings;
+            tabPageSensorController.Text = Lang.PLCSettings;
+            tabPageSerialDevice.Text = Lang.ScannerSettings;
+            lblFormName.Text = Lang.Settings;
+            toolStripVersion.Text = Lang.Version + ": " + Properties.Settings.Default.SoftwareVersion;
+            lblSensorControllerStatus.Text = Lang.PLCLabel;
+            lblStatusCamera01.Text = Lang.CameraTMP;
+            lblStatusPrinter01.Text = Lang.Printer;
+        }
+
+        /// <summary>
+        /// Invoke printer status change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Shared_OnPrinterStatusChange(object sender, EventArgs e)
+        {
+            UpdateStatusLabelPrinter();
+        }
+
+        /// <summary>
+        /// Invoke camera status change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Shared_OnCameraStatusChange(object sender, EventArgs e)
+        {
+            UpdateStatusLabelCamera();
+        }
+
+        /// <summary>
+        /// Invoke sensor status change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Shared_OnSensorControllerChangeEvent(object sender, EventArgs e)
+        {
+            UpdateUISensorControllerStatus(Shared.IsSensorControllerConnected);
+        }
+
+        /// <summary>
+        ///  Update Camera connection status icon for connect (green), disconnect (red)
+        /// </summary>
+        /// 
+
+        /// <summary>
+        /// Invoke SerialDevice status change
+        /// </summary>
+        private void Shared_OnSerialDeviceControllerChangeEvent(object sender, EventArgs e)
+        {
+            UpdateUISerialDeviceControllerStatus(Shared.IsSerialDeviceConnected);
+        }
+
+        private void UpdateStatusLabelCamera()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateStatusLabelCamera()));
+                return;
+            }
+
+            for (int i = 0; i < Shared.Settings.CameraList.Count; i++)
+            {
+                if (i < _LabelStatusCameraList.Count)
+                {
+                    CameraModel cameraModel = Shared.Settings.CameraList[i];
+                    ToolStripLabel labelStatusCamera = _LabelStatusCameraList[i];
+                    //string cameraName = string.Format("{0} {1}",Lang.Camera,i + 1);
+                    if (cameraModel.IsConnected)
+                    {
+                        ShowLabelIcon(labelStatusCamera, Lang.CameraTMP, Properties.Resources.icons8_camera_30px_connected);
+                    }
+                    else
+                    {
+                        ShowLabelIcon(labelStatusCamera, Lang.CameraTMP, Properties.Resources.icons8_camera_30px_disconnected);
+                    }
+                }
+            }
+        }
+
+        private void ShowLabelIcon(ToolStripLabel label, String text, Image icon)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => ShowLabelIcon(label, text, icon)));
+                return;
+            }
+
+            if (label.Tag == icon)
+            {
+                return;
+            }
+
+            label.Tag = icon;
+            label.ImageAlign = ContentAlignment.MiddleLeft;
+            label.TextAlign = ContentAlignment.MiddleRight;
+
+            label.Text = text;
+            label.Image = icon;
+        }
+
+        /// <summary>
+        /// Update Printer connection status icon for connect (green), disconnect (red)
+        /// </summary>
+        private void UpdateStatusLabelPrinter()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateStatusLabelPrinter()));
+                return;
+            }
+
+            for (int i = 0; i < Shared.Settings.PrinterList.Count; i++)
+            {
+                if (i < _LabelStatusPrinterList.Count)
+                {
+                    PrinterModel printerModel = Shared.Settings.PrinterList[i];
+                    ToolStripLabel labelStatusPrinter = _LabelStatusPrinterList[i];
+                    //string printerName = string.Format("{0} {1}",Lang.Printer,i + 1);
+                    if (printerModel.IsConnected)
+                    {
+                        ShowLabelIcon(labelStatusPrinter, Lang.Printer, Properties.Resources.icons8_printer_30px_connected);
+                    }
+                    else
+                    {
+                        ShowLabelIcon(labelStatusPrinter, Lang.Printer, Properties.Resources.icons8_printer_30px_disconnected);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Update Sensor connection status icon for connect (green), disconnect (red)
+        /// </summary>
+        /// <param name="isConnect"></param>
+        private void UpdateUISensorControllerStatus(bool isConnect)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateUISensorControllerStatus(isConnect)));
+                return;
+            }
+            if (isConnect)
+            {
+                ShowLabelIcon(lblSensorControllerStatus, Lang.SensorController, Properties.Resources.icons8_sensor_30px_connected);
+            }
+            else
+            {
+                ShowLabelIcon(lblSensorControllerStatus, Lang.SensorController, Properties.Resources.icons8_sensor_30px_disconnected);
+            }
+        }
+
+        private void UpdateUISerialDeviceControllerStatus(bool isConnect)
+        {
+            // thinh dang sua
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateUISerialDeviceControllerStatus(isConnect)));
+                return;
+            }
+            if (isConnect)
+            {
+                ShowLabelIcon(lblStatusSerialDevice, Lang.SerialDevice, Properties.Resources.icons8_scanner_connected);
+            }
+            else
+            {
+                ShowLabelIcon(lblStatusSerialDevice, Lang.SerialDevice, Properties.Resources.icons8_scanner_disconnected);
+            }
+        }
+
+        private void lblSensorControllerStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatusCamera01_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadConfigInfo()
+        {
+            if (_ucConfigInfo == null) return;
+            try
+            {
+                var s = Shared.Settings;
+                int delta = (s?.THDeltaMinutes > 0) ? s.THDeltaMinutes : 0;
+                int nMin = (s?.THNMinutes > 0) ? s.THNMinutes : 30;
+
+                _ucConfigInfo.LoadData(
+                    lineId: s?.LineId ?? "",
+                    lineName: s?.LineName ?? "",
+                    status: Shared.OperStatus == OperationStatus.Running ? "Đang chạy" : "Dừng",
+                    bufferPrint: s?.THBufferCount ?? 0,
+                    timeLogSave: s?.THLogInterval ?? 5,
+                    timeMonitor: s?.THMonitorInterval ?? 10,
+                    qrThreshold: s?.THQrThreshold ?? 0,
+                    modeOperator: s?.THOperatingMode.ToDisplayString() ?? "",
+                    detalMode1: delta > 0 ? delta + " giây" : "Không",
+                    timeMode2: nMin + " phút",
+                    errorImagePath: s?.THErrorImageFolder ?? "",
+                    operatingMode: (int)(s?.THOperatingMode ?? 0),
+                    maxConsecutiveDefects: s?.THMaxConsecutiveError ?? 0,
+                    reserveFactor: s?.THReserveFactor ?? 1.5);
+            }
+            catch { }
+        }
+    }
+}
