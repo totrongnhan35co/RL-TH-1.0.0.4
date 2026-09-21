@@ -1,0 +1,1444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PleaseStopTheSystemBeforeClosingTheApplication" xml:space="preserve">
+    <value>Please stop the system before closing the application !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseStopTheSystemBeforeClosingTheApplication2" xml:space="preserve">
+    <value>Please stop the system before closing the application !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseStopTheSystemBeforeClosingTheApplication1" xml:space="preserve">
+    <value>Please stop the system before closing the application !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="LogoutSuccessfully" xml:space="preserve">
+    <value>Logout successfully !</value>
+  </data>
+  <data name="DoYouWantToContinue" xml:space="preserve">
+    <value>Do you want to continue ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="SwitchUser" xml:space="preserve">
+    <value>Switch user</value>
+  </data>
+  <data name="SomePrintParametersAreMissing" xml:space="preserve">
+    <value>Some print parameters are missing ! Please check again !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SensorController" xml:space="preserve">
+    <value>PLC</value>
+  </data>
+  <data name="Printer" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="Camera" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="PleaseCheckTheDatabaseConnection" xml:space="preserve">
+    <value>Please check the Database connection !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="PleaseCheckTheTemplate" xml:space="preserve">
+    <value>Please check the print Template !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseCheckTheCameraConnection" xml:space="preserve">
+    <value>Please check the Camera connection !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SomeParametersAreMissing" xml:space="preserve">
+    <value>Some parameters are missing ! Please check again !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseCheckThePrinterConnection" xml:space="preserve">
+    <value>Please check the Printer connection !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ThereMustBeAtLeastOneActionSelected" xml:space="preserve">
+    <value>There must be at least one action selected !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SomeActivationParametersAreMissing" xml:space="preserve">
+    <value>Some activation parameters are missing ! Please check again !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DoYouWantToStopTheSystem" xml:space="preserve">
+    <value>Do you want to stop the system ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UserStoppedTheSystem" xml:space="preserve">
+    <value>User stopped the system !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Invalid password !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PasswordAtLeast6Character" xml:space="preserve">
+    <value>Password must be at least 6 characters!</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>Passwords do not match!</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UsernameOrPasswordCannotBeLeftBlank" xml:space="preserve">
+    <value>Username or password cannot be left blank !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UsernameOrPasswordIsIncorrect" xml:space="preserve">
+    <value>Username or password is incorrect !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TotalChecked" xml:space="preserve">
+    <value>Total checked</value>
+  </data>
+  <data name="ResultFile" xml:space="preserve">
+    <value>Result file</value>
+  </data>
+  <data name="PassedUpperCase" xml:space="preserve">
+    <value>PASSED</value>
+  </data>
+  <data name="FailedUpperCase" xml:space="preserve">
+    <value>FAILED</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="ProcessingTime" xml:space="preserve">
+    <value>Processing time</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading . . .</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait . . .</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="NoReadOuputString" xml:space="preserve">
+    <value>No read ouput string</value>
+  </data>
+  <data name="AutoReconnect" xml:space="preserve">
+    <value>Auto reconnect</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="PODProtocol" xml:space="preserve">
+    <value>POD Protocol</value>
+  </data>
+  <data name="OldVersion" xml:space="preserve">
+    <value>Old Version</value>
+  </data>
+  <data name="NewVersion" xml:space="preserve">
+    <value>New Version</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="ImageExport" xml:space="preserve">
+    <value>Image export</value>
+  </data>
+  <data name="TheImageExportFunction" xml:space="preserve">
+    <value>Image export feature will affect system performance !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DataCheckedFileName" xml:space="preserve">
+    <value>Data checked file name</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="OutputSignal" xml:space="preserve">
+    <value>Output signal</value>
+  </data>
+  <data name="AddAccountFailed" xml:space="preserve">
+    <value>Adding user failed !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddAccountSuccess" xml:space="preserve">
+    <value>Add user successfully !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DefaultAccountEdited" xml:space="preserve">
+    <value>Cannot edit default account !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeleteAccountFailed" xml:space="preserve">
+    <value>User deletion failed !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeleteAccountSuccess" xml:space="preserve">
+    <value>User deletion successful !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EditAccountFailed" xml:space="preserve">
+    <value>User editing failed !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EditAccountSuccess" xml:space="preserve">
+    <value>User editing successful !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FullnameColum" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="PasswordColumn" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="RoleColumn" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="TextboxEmpty" xml:space="preserve">
+    <value> is empty</value>
+  </data>
+  <data name="UsernameColumn" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UsernameExist" xml:space="preserve">
+    <value>Username already exist !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UsernameNoExist" xml:space="preserve">
+    <value>Username don't exist !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="NotLoadDatabase" xml:space="preserve">
+    <value>Could not load database !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Job details</value>
+  </data>
+  <data name="CompareType" xml:space="preserve">
+    <value>Compare type</value>
+  </data>
+  <data name="CanRead" xml:space="preserve">
+    <value>Can read</value>
+  </data>
+  <data name="StaticText" xml:space="preserve">
+    <value>Static text</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="PODFormat" xml:space="preserve">
+    <value>Comparative data format</value>
+  </data>
+  <data name="JobSystem" xml:space="preserve">
+    <value>Job system</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="AutoLoad" xml:space="preserve">
+    <value>Auto load file</value>
+  </data>
+  <data name="Gennerate" xml:space="preserve">
+    <value>Gennerate</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="RememberPassword" xml:space="preserve">
+    <value>Save login information</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RetypePassword" xml:space="preserve">
+    <value>Retype password</value>
+  </data>
+  <data name="InfomationDetails" xml:space="preserve">
+    <value>Infomation details</value>
+  </data>
+  <data name="Fullname" xml:space="preserve">
+    <value>Fullname</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="PODList" xml:space="preserve">
+    <value>List of fields from the database</value>
+  </data>
+  <data name="Sample" xml:space="preserve">
+    <value>Format of the verification field</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text field content</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="CameraSettings" xml:space="preserve">
+    <value>Camera settings</value>
+  </data>
+  <data name="SystemSettings" xml:space="preserve">
+    <value>System settings</value>
+  </data>
+  <data name="PrinterSettings" xml:space="preserve">
+    <value>Printer settings</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteFile" xml:space="preserve">
+    <value>Are you sure you want to delete the file ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseInputTemplateName" xml:space="preserve">
+    <value>Please enter print template name !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DoYouWantToReplaceExistingTemplate" xml:space="preserve">
+    <value>Do you want to replace existing template ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseSeletedJobForTheSystem" xml:space="preserve">
+    <value>Please select a job for the system !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AreYouSureYouWantToDeleteUser" xml:space="preserve">
+    <value>Are you sure you want to delete the user ? </value>
+    <comment>Message</comment>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ProgramHistory" xml:space="preserve">
+    <value>Program history</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="SeletedJobInfo" xml:space="preserve">
+    <value>Seleted job info</value>
+  </data>
+  <data name="TemplateName" xml:space="preserve">
+    <value>Template name</value>
+  </data>
+  <data name="JobFormat" xml:space="preserve">
+    <value>Job format</value>
+  </data>
+  <data name="DateTimeFormat" xml:space="preserve">
+    <value>Datetime format</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="CompleteTheBarcodeVerificationProcess" xml:space="preserve">
+    <value>Complete the barcode verification process !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="GeneralInfo" xml:space="preserve">
+    <value>General info</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="ReleaseNote" xml:space="preserve">
+    <value>Release notes</value>
+  </data>
+  <data name="StartIndex" xml:space="preserve">
+    <value>Start index</value>
+  </data>
+  <data name="EndIndex" xml:space="preserve">
+    <value>End index</value>
+  </data>
+  <data name="ViewLog" xml:space="preserve">
+    <value>View log</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>Clear log</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="JobList" xml:space="preserve">
+    <value>Job name</value>
+  </data>
+  <data name="ImportDatabase" xml:space="preserve">
+    <value>Database path</value>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>Template print</value>
+  </data>
+  <data name="AccountList" xml:space="preserve">
+    <value>Account list</value>
+  </data>
+  <data name="previewdatabase" xml:space="preserve">
+    <value>Database view</value>
+  </data>
+  <data name="ConfirmPC" xml:space="preserve">
+    <value>You do not have a license for this software. Please contact the vendor.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ApplicationIsAlreadyRunning" xml:space="preserve">
+    <value>The application is already running !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CannotAccessToFile" xml:space="preserve">
+    <value>Cannot access file !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DatabaseFrmMain" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="ProgramHistoryFrmMain" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="DoYouWantExitApplication" xml:space="preserve">
+    <value>Do you want to exit the application ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CheckedFailed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="CheckedPassed" xml:space="preserve">
+    <value>Passed</value>
+  </data>
+  <data name="PrintedCode" xml:space="preserve">
+    <value>Printed data</value>
+  </data>
+  <data name="SentData" xml:space="preserve">
+    <value>Sent data</value>
+  </data>
+  <data name="TotalsPrint" xml:space="preserve">
+    <value>Totals</value>
+  </data>
+  <data name="VerifyProgress" xml:space="preserve">
+    <value>Verification progress</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="CheckedResult1" xml:space="preserve">
+    <value>Job logs</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PrinterSeries" xml:space="preserve">
+    <value>Printer series</value>
+  </data>
+  <data name="RSeries" xml:space="preserve">
+    <value>R series</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SupportForCamera" xml:space="preserve">
+    <value>Support for camera</value>
+  </data>
+  <data name="CreateANewJob" xml:space="preserve">
+    <value>Create a new job</value>
+  </data>
+  <data name="SelectJob" xml:space="preserve">
+    <value>Select job</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="PleaseCheckTheUSBKey" xml:space="preserve">
+    <value>Please check the USB license! The application will close after 60 seconds.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseSaveTheWorkYouJustEntered" xml:space="preserve">
+    <value>Please ! Save the work you just entered !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseChooseAJobOrCreateANewOne" xml:space="preserve">
+    <value>Please select a job or create a new job !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SuccessfulNewJobCreationStartTheProcess" xml:space="preserve">
+    <value>Create a new job successfully ! Start the process ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NewJobCreationFailed" xml:space="preserve">
+    <value>Creating a new job failed !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="VerifyAndPrint" xml:space="preserve">
+    <value>Verify and print</value>
+  </data>
+  <data name="ResponseContent" xml:space="preserve">
+    <value>Response content</value>
+  </data>
+  <data name="PrinterRemotePort" xml:space="preserve">
+    <value>Printer remote port</value>
+  </data>
+  <data name="AdvancedPrinterSettings" xml:space="preserve">
+    <value>Advanced printer settings</value>
+  </data>
+  <data name="PleaseSelectDatabasePath" xml:space="preserve">
+    <value>Please select database path !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseSelectPODFormat" xml:space="preserve">
+    <value>Please select comparison POD format !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CheckExistTemplatePrinter" xml:space="preserve">
+    <value>Template print does not exist. Please check the template print list again or connect the printer.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PODChangedWarning" xml:space="preserve">
+    <value>This feature needs to restart the application to take effect !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="PleaseSelectTheDatabaseFileFirst" xml:space="preserve">
+    <value>Please select the database file first !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DataTypeMustBeRAWData" xml:space="preserve">
+    <value>Data type must be RAW data</value>
+  </data>
+  <data name="ResponsePODDataFeatureIsNotEnable" xml:space="preserve">
+    <value>POD Data response feature is not enabled !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ResponsePODCommandFeatureIsNotEnable" xml:space="preserve">
+    <value>POD Command response feature is not enabled !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PODFeatureIsNotEnabled" xml:space="preserve">
+    <value>POD feature is not enabled !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MonitorFeatureIsNotEnabled" xml:space="preserve">
+    <value>Monitor feature is not enabled !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Total number of records</value>
+  </data>
+  <data name="PODModeMustBePrintAll" xml:space="preserve">
+    <value>POD mode must be "Print all" !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ThePrinterIsInAnAbnormalStatePleaseCheckAgain" xml:space="preserve">
+    <value>The printer is in an abnormal state, please check again !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NewLyCreated" xml:space="preserve">
+    <value>Newly created</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Unfinished" xml:space="preserve">
+    <value>Incomplete</value>
+  </data>
+  <data name="AfterProduction" xml:space="preserve">
+    <value>After production</value>
+  </data>
+  <data name="OnProduction" xml:space="preserve">
+    <value>On production</value>
+  </data>
+  <data name="JobType" xml:space="preserve">
+    <value>Job type</value>
+  </data>
+  <data name="JobStatus" xml:space="preserve">
+    <value>Job status</value>
+  </data>
+  <data name="PreviewComparisonData" xml:space="preserve">
+    <value>Preview comparison data</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Per" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>items</value>
+  </data>
+  <data name="GoToPage" xml:space="preserve">
+    <value>Go to page</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="TotalNumberOfCodeInTheDatabase" xml:space="preserve">
+    <value>Total number of codes in the database</value>
+  </data>
+  <data name="TotalCodeOfTheJob" xml:space="preserve">
+    <value>Total code of the job</value>
+  </data>
+  <data name="NumberOfCodesPrinted" xml:space="preserve">
+    <value>Number of printed code</value>
+  </data>
+  <data name="NumberOfVerifiedCode" xml:space="preserve">
+    <value>Number of verified code</value>
+  </data>
+  <data name="NumberOfValidCodes" xml:space="preserve">
+    <value>Number of valid code</value>
+  </data>
+  <data name="NumberOfFailedCodes" xml:space="preserve">
+    <value>Number of failed code</value>
+  </data>
+  <data name="RePrint" xml:space="preserve">
+    <value>Reprint</value>
+  </data>
+  <data name="CheckAllPrinterSettings" xml:space="preserve">
+    <value>Check all printer settings</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Received data</value>
+  </data>
+  <data name="PleaseEnterTheStaticText" xml:space="preserve">
+    <value>Please enter the static text !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SendDataMethod" xml:space="preserve">
+    <value>Data sending method for Verify and Print mode</value>
+  </data>
+  <data name="StopCondition" xml:space="preserve">
+    <value>Completion condition</value>
+  </data>
+  <data name="ReprintError" xml:space="preserve">
+    <value>Reprinting cannot be performed ! Please restart the software.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Compare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="FailureDataSentToPrinter" xml:space="preserve">
+    <value>Data sent to printer when verification failed</value>
+  </data>
+  <data name="TotalPassed" xml:space="preserve">
+    <value>Total passed</value>
+  </data>
+  <data name="ListOfField" xml:space="preserve">
+    <value>List of field</value>
+  </data>
+  <data name="PrintField" xml:space="preserve">
+    <value>Print field</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="SelectedField" xml:space="preserve">
+    <value>Selected fields</value>
+  </data>
+  <data name="SelectPrintField" xml:space="preserve">
+    <value>Select print field</value>
+  </data>
+  <data name="CannotAccessFile" xml:space="preserve">
+    <value>The process cannot access the file !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PleaseInputJobName" xml:space="preserve">
+    <value>Please enter job name !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ClearResponse" xml:space="preserve">
+    <value>Clear response</value>
+  </data>
+  <data name="PrinterDisconnected" xml:space="preserve">
+    <value>Lost connection to printer !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CameraDisconnected" xml:space="preserve">
+    <value>Lost connection to camera !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CantDetect" xml:space="preserve">
+    <value>Can't detect !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PODModeMustBePrintLast" xml:space="preserve">
+    <value>POD mode must be "Print last" !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CanNotFindCheckedResult" xml:space="preserve">
+    <value>The verification result backup file was not found !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CanNotFindDatabase" xml:space="preserve">
+    <value>The database file was not found !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CanNotFindPrintedResponse" xml:space="preserve">
+    <value>The printed response backup file was not found !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DatabaseDoesNotExist" xml:space="preserve">
+    <value>Database does not exist !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="YouDoNotHavePermission" xml:space="preserve">
+    <value>You do not have permission to perform this action !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CameraTMP" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="ExportLog" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="CannotDetect" xml:space="preserve">
+    <value>Can't detect</value>
+  </data>
+  <data name="DuplicateDataMessage" xml:space="preserve">
+    <value>Found NN duplicate data in the input database !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NumberOfMarkSensor" xml:space="preserve">
+    <value>Number of mark sensor</value>
+  </data>
+  <data name="DetectError" xml:space="preserve">
+    <value>Unknown error from NN file !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Handle" xml:space="preserve">
+    <value>Handle</value>
+  </data>
+  <data name="PleaseCheck" xml:space="preserve">
+    <value>Please check</value>
+  </data>
+  <data name="PrintedResponse" xml:space="preserve">
+    <value>Printed response</value>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="CheckedResult" xml:space="preserve">
+    <value>Verification results</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>Unable to access NN file !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="ReprintConfirm" xml:space="preserve">
+    <value>Do you want to Reprint ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="HandleError" xml:space="preserve">
+    <value>Handle error !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrinterNotSupportHttpRequest" xml:space="preserve">
+    <value>The printer does not support checking parameters, please turn off the "Check all printer settings" function in the settings!</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotesForSettingCam" xml:space="preserve">
+    <value>Notes: please named object on ISCamera is Object_&lt;n&gt; with n = (1,...5)</value>
+    <comment>MinhChau Add 18122023</comment>
+  </data>
+  <data name="CannotRespone" xml:space="preserve">
+    <value>Cannot Respone !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CanRespone" xml:space="preserve">
+    <value>Can Respone !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="GAP" xml:space="preserve">
+    <value>GAP</value>
+    <comment>MinhChau Add 1/16/2024</comment>
+  </data>
+  <data name="R-LinkPerformance" xml:space="preserve">
+    <value>R-Link performance</value>
+    <comment>MinhChau Add 1/16/2024</comment>
+  </data>
+  <data name="SendTime" xml:space="preserve">
+    <value>Send time (ms):</value>
+    <comment>MinhChau Add 1/16/2024</comment>
+  </data>
+  <data name="TurboSend" xml:space="preserve">
+    <value>Acceleration POD Send</value>
+    <comment>MinhChau Add 1/16/2024</comment>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+    <comment>MinhChau Add 1/16/2024</comment>
+  </data>
+  <data name="PODSendMode" xml:space="preserve">
+    <value>POD Send Mode</value>
+    <comment>MinhChau Add 1/17/2024</comment>
+  </data>
+  <data name="OCRCameraIsOffline" xml:space="preserve">
+    <value>In-Sight Vision OCR Camera is offline !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrinterOperatingSystem" xml:space="preserve">
+    <value>Printer operating system</value>
+  </data>
+  <data name="DelaySensor" xml:space="preserve">
+    <value>Delay Sensor</value>
+  </data>
+  <data name="DisableSensor" xml:space="preserve">
+    <value>Disable Sensor</value>
+  </data>
+  <data name="PulseEncoder" xml:space="preserve">
+    <value>PPR</value>
+  </data>
+  <data name="EncoderDiameter" xml:space="preserve">
+    <value>Encoder Diameter</value>
+  </data>
+  <data name="ErrorCondition" xml:space="preserve">
+    <value>Error Condition</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="Standalone" xml:space="preserve">
+    <value>Standalone</value>
+  </data>
+  <data name="InsightVisionObjectSettings" xml:space="preserve">
+    <value>In-Sight Vision camera object settings</value>
+  </data>
+  <data name="ObjectNameMaster" xml:space="preserve">
+    <value>Object Name (Master)</value>
+  </data>
+  <data name="ObjectNameSlave" xml:space="preserve">
+    <value>Object Name (Slave)</value>
+  </data>
+  <data name="IDRead" xml:space="preserve">
+    <value>ID Read</value>
+  </data>
+  <data name="CharacterRead" xml:space="preserve">
+    <value>Character Read</value>
+  </data>
+  <data name="MasterJobName" xml:space="preserve">
+    <value>Master Job file name</value>
+  </data>
+  <data name="SlaveJobName" xml:space="preserve">
+    <value>Slave Job file name</value>
+  </data>
+  <data name="ImageResolution" xml:space="preserve">
+    <value>Image Resolution</value>
+  </data>
+  <data name="DatamanReadMode" xml:space="preserve">
+    <value>Dataman read mode</value>
+  </data>
+  <data name="ObjectNameSingle" xml:space="preserve">
+    <value>Object Name (Single)</value>
+  </data>
+  <data name="SingleJobFileName" xml:space="preserve">
+    <value>Single Job file name</value>
+  </data>
+  <data name="ExportCheckedLog" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="SerialDevice" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
+  <data name="BitsPerSecond" xml:space="preserve">
+    <value>Bits Per Second</value>
+  </data>
+  <data name="DataBits" xml:space="preserve">
+    <value>Data Bits</value>
+  </data>
+  <data name="Parity" xml:space="preserve">
+    <value>Parity</value>
+  </data>
+  <data name="StopBits" xml:space="preserve">
+    <value>Stop Bits</value>
+  </data>
+  <data name="Recheck" xml:space="preserve">
+    <value>Recheck</value>
+  </data>
+  <data name="ReCheckConfirm" xml:space="preserve">
+    <value>Do you want to Recheck ?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SerialDeviceIsNotConnected" xml:space="preserve">
+    <value>Scanner device is not connected !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ComName" xml:space="preserve">
+    <value>COM Name</value>
+  </data>
+  <data name="SystemIsRunningPleaseStop" xml:space="preserve">
+    <value>System is running. Please stop before Rechecking !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RecheckMode" xml:space="preserve">
+    <value>Recheck</value>
+  </data>
+  <data name="PleaseCheckSerialDeviceConnection" xml:space="preserve">
+    <value>Please check Scanner connection !</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BarcodeVerificationSystem" xml:space="preserve">
+    <value>Barcode Verification System</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+    <comment>20240925_AddNew</comment>
+  </data>
+  <data name="SlaveIPAddress" xml:space="preserve">
+    <value>Slave IP Address</value>
+    <comment>20240925_AddNew</comment>
+  </data>
+  <data name="Sensor1" xml:space="preserve">
+    <value>Sensor 1</value>
+    <comment>20240925_AddNew</comment>
+  </data>
+  <data name="Sensor2" xml:space="preserve">
+    <value>Sensor 2</value>
+    <comment>20240925_AddNew</comment>
+  </data>
+  <data name="CannotDeleteCurrentUser" xml:space="preserve">
+    <value>Cannot delete an account that is currently in use</value>
+  </data>
+  <data name="ScannerLabel" xml:space="preserve">
+    <value>Scanner</value>
+  </data>
+  <data name="ScannerSettings" xml:space="preserve">
+    <value>Scanner settings</value>
+  </data>
+  <data name="PLCLabel" xml:space="preserve">
+    <value>PLC</value>
+  </data>
+  <data name="PLCSettings" xml:space="preserve">
+    <value>PLC Settings</value>
+  </data>
+  <data name="DoYouWantToRestartTheApplication" xml:space="preserve">
+    <value>Do you want to restart the application ?</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="FunctionIsComingSoon" xml:space="preserve">
+    <value>Function is coming soon</value>
+  </data>
+  <data name="GetSampleConfirm" xml:space="preserve">
+    <value>Do you want to get sample ?</value>
+  </data>
+  <data name="GetSampleMode" xml:space="preserve">
+    <value>Get Sample</value>
+  </data>
+  <data name="AllPassedData" xml:space="preserve">
+    <value>All Passed Data</value>
+  </data>
+  <data name="PassedDataByCameraScanner" xml:space="preserve">
+    <value>Passed Data By Camera &amp; Scanner</value>
+  </data>
+  <data name="PassedDataByScanner" xml:space="preserve">
+    <value>Passed Data By Scanner</value>
+  </data>
+  <data name="UnverifiedData" xml:space="preserve">
+    <value>Unverified Data</value>
+  </data>
+  <data name="SampledData" xml:space="preserve">
+    <value>Sampled Data</value>
+  </data>
+  <data name="FailedData" xml:space="preserve">
+    <value>Failed Data</value>
+  </data>
+  <data name="ExportType" xml:space="preserve">
+    <value>Export Type</value>
+  </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>Export Data</value>
+  </data>
+  <data name="WaitingData" xml:space="preserve">
+    <value>Waiting Data</value>
+  </data>
+  <data name="CheckMode" xml:space="preserve">
+    <value>Check Mode</value>
+  </data>
+  <data name="ExportAll" xml:space="preserve">
+    <value>Export All</value>
+  </data>
+  <data name="OneForAllExport" xml:space="preserve">
+    <value>One For All Export</value>
+  </data>
+  <data name="WaitingData_2" xml:space="preserve">
+    <value>Waiting Data 2</value>
+    <comment>Mã chưa in 2</comment>
+  </data>
+  <data name="BarcodeQuality" xml:space="preserve">
+    <value>Barcode Quality</value>
+  </data>
+  <data name="DatabaseType" xml:space="preserve">
+    <value>Database Type</value>
+  </data>
+  <data name="ServerName" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="DatabaseName" xml:space="preserve">
+    <value>Database Name</value>
+  </data>
+  <data name="TableName" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="LoadDatabase" xml:space="preserve">
+    <value>Load Database</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="FillLoadDBGaps" xml:space="preserve">
+    <value>Please fill in Server Name, Database Name, and Username!</value>
+  </data>
+  <data name="SuccessDBConnection" xml:space="preserve">
+    <value>Success: Connected to the database!</value>
+  </data>
+  <data name="FailedDBConnection" xml:space="preserve">
+    <value>Failed: Could not connect to the database</value>
+  </data>
+  <data name="FailedRetrieveTable" xml:space="preserve">
+    <value>Failed to retrieve table names</value>
+  </data>
+  <data name="PleaseSelectTable" xml:space="preserve">
+    <value>Please select a table name before proceeding.</value>
+  </data>
+  <data name="FailedLoadSQLite" xml:space="preserve">
+    <value>Failed to load SQLite database</value>
+  </data>
+  <data name="DelayOutputError" xml:space="preserve">
+    <value>Delay Output Error</value>
+  </data>
+  <data name="Sensor" xml:space="preserve">
+    <value>Sensor</value>
+  </data>
+  <data name="FirstRowHeader" xml:space="preserve">
+    <value>First Row Header</value>
+  </data>
+  <data name="EncoderSettings" xml:space="preserve">
+    <value>Encoder Settings</value>
+  </data>
+  <data name="ResumeEncoder" xml:space="preserve">
+    <value>Resume Encoder</value>
+    <comment>Chiều Encoder</comment>
+  </data>
+  <data name="ResumeA" xml:space="preserve">
+    <value>Resume A</value>
+  </data>
+  <data name="ResumeAB" xml:space="preserve">
+    <value>Resume AB</value>
+  </data>
+  <data name="DuplicatedDatabase" xml:space="preserve">
+    <value>Duplicated Database</value>
+  </data>
+  <data name="PLCversion" xml:space="preserve">
+    <value>PLC Version</value>
+  </data>
+  <data name="AllowDupAndNonStop" xml:space="preserve">
+    <value>Allow Duplicates, Continuous Run</value>
+  </data>
+  <data name="ItemsPerHour" xml:space="preserve">
+    <value>Items / Hour</value>
+  </data>
+  <data name="LineID" xml:space="preserve">
+    <value>Line ID</value>
+  </data>
+  <data name="LineName" xml:space="preserve">
+    <value>Line Name</value>
+  </data>
+  <data name="FactoryCode" xml:space="preserve">
+    <value>Factory Code</value>
+  </data>
+  <data name="ProductionMode" xml:space="preserve">
+    <value>Production Mode</value>
+  </data>
+  <data name="Manufacturing" xml:space="preserve">
+    <value>Manufacturing</value>
+  </data>
+  <data name="Dispatching" xml:space="preserve">
+    <value>Dispatching</value>
+  </data>
+  <data name="DisplayData" xml:space="preserve">
+    <value>Display Data</value>
+  </data>
+  <data name="MaskData" xml:space="preserve">
+    <value>Mask data partially</value>
+  </data>
+  <data name="IncreasedData" xml:space="preserve">
+    <value>Increased Data</value>
+  </data>
+  <data name="ProductionSettings" xml:space="preserve">
+    <value>Production Settings</value>
+  </data>
+  <data name="URLPath" xml:space="preserve">
+    <value>URL Path</value>
+  </data>
+  <data name="GetInfo" xml:space="preserve">
+    <value>Get Info</value>
+  </data>
+  <data name="GenerateCodes" xml:space="preserve">
+    <value>Generate Codes</value>
+  </data>
+  <data name="MaterialItems" xml:space="preserve">
+    <value>Material Items</value>
+    <comment>Danh sách sản phẩm</comment>
+  </data>
+  <data name="OrderInfo" xml:space="preserve">
+    <value>Order Information</value>
+  </data>
+  <data name="NumberOfGeneratedCodes" xml:space="preserve">
+    <value>Number Of Generated Codes</value>
+  </data>
+  <data name="NoCodesGeneratedYet" xml:space="preserve">
+    <value>No Codes Generated Yet</value>
+  </data>
+  <data name="SentSyncData" xml:space="preserve">
+    <value>Sent Sync Data</value>
+  </data>
+  <data name="SentSyncDataSaaS" xml:space="preserve">
+    <value>Sent Web Server Data</value>
+  </data>
+  <data name="SentSAPData" xml:space="preserve">
+    <value>Sent Middleware Data</value>
+  </data>
+  <data name="ConfirmCompletion" xml:space="preserve">
+    <value>Confirm Completion</value>
+  </data>
+  <data name="SyncData" xml:space="preserve">
+    <value>Sync Data</value>
+  </data>
+  <data name="DisposeBarcodes" xml:space="preserve">
+    <value>Dispose Barcodes</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>Sync</value>
+  </data>
+  <data name="Dispose" xml:space="preserve">
+    <value>Dispose</value>
+  </data>
+  <data name="RePrintBarcodes" xml:space="preserve">
+    <value>RePrint Barcodes</value>
+  </data>
+  <data name="AddMaterial" xml:space="preserve">
+    <value>Add Material</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="AreYouSureGenerateDispatchingCodes" xml:space="preserve">
+    <value>Are You Sure To Generate Dispatching Codes For This ?</value>
+  </data>
+  <data name="InternalSpeed" xml:space="preserve">
+    <value>Internal Speed</value>
+  </data>
+  <data name="CustomPODToExport" xml:space="preserve">
+    <value>Custom POD to Export</value>
+  </data>
+  <data name="SelectExportMode" xml:space="preserve">
+    <value>Select Export Mode</value>
+  </data>
+  <data name="ExportPrintData" xml:space="preserve">
+    <value>Export Print Data</value>
+  </data>
+  <data name="ExportCheckedResult" xml:space="preserve">
+    <value>Export Checked Result</value>
+  </data>
+  <data name="FilterPrintData" xml:space="preserve">
+    <value>Filter Print Data </value>
+  </data>
+  <data name="FilterCheckResults" xml:space="preserve">
+    <value>Filter Check Results </value>
+  </data>
+  <data name="CustomHeader" xml:space="preserve">
+    <value>Custom Header</value>
+  </data>
+  <data name="CustomCheckedHeader" xml:space="preserve">
+    <value>Custom Checked Header</value>
+  </data>
+  <data name="CustomCheckedResult" xml:space="preserve">
+    <value>Custom Checked Result</value>
+  </data>
+  <data name="CustomPrintResult" xml:space="preserve">
+    <value>Custom Print Result</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="DefaultExport" xml:space="preserve">
+    <value>Default Export</value>
+  </data>
+  <data name="CustomExport" xml:space="preserve">
+    <value>Custom Export</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="AllowJobDeletion" xml:space="preserve">
+    <value>Allow Job Deletion</value>
+  </data>
+  <data name="JobNameAlreadyExists" xml:space="preserve">
+    <value>Job name already exists. Please enter a different name!</value>
+  </data>
+  <data name="MarkCheckedAsPrinted" xml:space="preserve">
+    <value>Mark Checked As Printed Data</value>
+  </data>
+  <data name="DoNotHavePermission" xml:space="preserve">
+    <value>Current User Does Not Have Permission For This Action!</value>
+  </data>
+  <data name="ExportDataExcel" xml:space="preserve">
+    <value>Export Report</value>
+  </data>
+  <data name="CheckModeDroco" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="tabMapped" xml:space="preserve">
+    <value>Confirm code pairing</value>
+  </data>
+  <data name="BarcodeVerificationSystemQr" xml:space="preserve">
+    <value>QR Code Verification System</value>
+  </data>
+  <data name="ViewOldJob" xml:space="preserve">
+    <value>View previous jobs</value>
+  </data>
+</root>
